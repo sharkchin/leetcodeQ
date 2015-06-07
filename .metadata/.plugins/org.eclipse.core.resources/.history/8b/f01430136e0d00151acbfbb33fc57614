@@ -44,7 +44,7 @@ public class Solution {
     }
     public String justifyLastRow(String[] words) {
         StringBuilder sb = new StringBuilder();
-        sb.append(words[beg++]);
+        sb.append(words[beg]);
         while(beg < end) {
             sb.append(" ");
             sb.append(words[beg++]);

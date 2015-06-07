@@ -1,27 +1,28 @@
 import java.util.*;
 
 public class Solution {
-	int beg = 0, end = 0, width = 0;
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> res = new ArrayList<String> ();
         int n = words.length;
+        int width = 0;
+        int beg = 0, end = 0;
         while(end < n) {
             String word = words[end];
             int newWidth = width;
             if(width != 0) newWidth += 1;
             newWidth += word.length();
             if(newWidth > maxWidth) {
-                res.add(justifyRow(words, maxWidth));
+                res.add(justifyRow(words, beg, end, width, maxWidth));
                 beg = end;
                 newWidth = word.length();
             }
             width = newWidth;
             end++;
         }
-        if(beg < n) res.add(justifyLastRow(words));
+        if(beg < n) res.add(justifyLastRow(words, beg, end));
         return res;
     }
-    public String justifyRow(String[] words, int maxWidth) {
+    public String justifyRow(String[] words, int beg, int end, int width, int maxWidth) {
         int wordCnt = end - beg, spaceSlotCnt = wordCnt - 1;
         if(spaceSlotCnt == 0) return words[beg];
         int extraSpaceTotal = maxWidth - width;
@@ -42,9 +43,9 @@ public class Solution {
         sb.append(words[end-1]);
         return sb.toString();
     }
-    public String justifyLastRow(String[] words) {
+    public String justifyLastRow(String[] words, int beg, int end) {
         StringBuilder sb = new StringBuilder();
-        sb.append(words[beg++]);
+        sb.append(words[beg]);
         while(beg < end) {
             sb.append(" ");
             sb.append(words[beg++]);

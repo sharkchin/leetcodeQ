@@ -23,17 +23,13 @@ public class SolutionTest {
 
 	@Test
 	public void testJustifyRow() {
-		s.beg = 3;
-		s.end = 6;
-		s.width = 15;
-		String str = s.justifyRow(words, 16);
+		String str = s.justifyRow(words, 3, 6, 15, 16);
 		System.out.println(str);
 	}
 
 	@Test
 	public void testJustifyLastRow() {
-		s.beg = 6;
-		String str = s.justifyLastRow(words);
+		String str = s.justifyLastRow(words, 6, 7);
 		System.out.println(str);
 	}
 
