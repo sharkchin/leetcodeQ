@@ -1,0 +1,31 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class SolutionTest {
+	
+	
+	@Test
+	public void testFullJustify() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testJustifyRow() {
+		
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testJustifyLastRow() {
+		
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSpaces() {
+		fail("Not yet implemented");
+	}
+
+}
