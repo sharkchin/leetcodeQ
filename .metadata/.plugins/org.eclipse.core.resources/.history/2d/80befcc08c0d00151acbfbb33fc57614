@@ -18,12 +18,12 @@ public class Solution {
             width = newWidth;
             end++;
         }
-        if(beg < n) res.add(justifyLastRow(words, maxWidth));
+        if(beg < n) res.add(justifyLastRow(words));
         return res;
     }
     public String justifyRow(String[] words, int maxWidth) {
         int wordCnt = end - beg, spaceSlotCnt = wordCnt - 1;
-        if(spaceSlotCnt == 0) return words[beg]+spaces(maxWidth-words[beg].length());
+        if(spaceSlotCnt == 0) return words[beg];
         int extraSpaceTotal = maxWidth - width;
         int extraSpacePerSlot = extraSpaceTotal / spaceSlotCnt;
         int extraSpaceSlotCnt = extraSpaceTotal % spaceSlotCnt;
@@ -42,17 +42,12 @@ public class Solution {
         sb.append(words[end-1]);
         return sb.toString();
     }
-    public String justifyLastRow(String[] words, int maxWidth) {
+    public String justifyLastRow(String[] words) {
         StringBuilder sb = new StringBuilder();
         sb.append(words[beg++]);
         while(beg < end) {
             sb.append(" ");
             sb.append(words[beg++]);
-        }
-        int rowCnt = sb.length();
-        while(rowCnt < maxWidth) {
-        	sb.append(" ");
-        	rowCnt++;
         }
         return sb.toString();
     }

@@ -25,7 +25,7 @@ public class SolutionTest {
 	@Test
 	public void testFullJustifyOnEmptyArray() {
 		List<String> res = s.fullJustify(new String[] {""}, 2);
-		assertEquals("  ", res.get(0));
+		assertEquals("  ", res);
 	}
 
 	@Test

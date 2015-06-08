@@ -23,7 +23,7 @@ public class Solution {
     }
     public String justifyRow(String[] words, int maxWidth) {
         int wordCnt = end - beg, spaceSlotCnt = wordCnt - 1;
-        if(spaceSlotCnt == 0) return words[beg]+spaces(maxWidth-words[beg].length());
+        if(spaceSlotCnt == 0) return words[beg];
         int extraSpaceTotal = maxWidth - width;
         int extraSpacePerSlot = extraSpaceTotal / spaceSlotCnt;
         int extraSpaceSlotCnt = extraSpaceTotal % spaceSlotCnt;

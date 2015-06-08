@@ -18,14 +18,9 @@ public class SolutionTest {
 	@Test
 	public void testFullJustify() {
 		List<String> res = s.fullJustify(words, maxWidth);
-		System.out.print(res);
-		
-	}
-	
-	@Test
-	public void testFullJustifyOnEmptyArray() {
-		List<String> res = s.fullJustify(new String[] {""}, 2);
-		assertEquals("  ", res.get(0));
+		//System.out.print(res);
+		res = s.fullJustify(new String[] {""}, 2);
+		assertEquals("  ", res);
 	}
 
 	@Test
@@ -40,7 +35,7 @@ public class SolutionTest {
 	@Test
 	public void testJustifyLastRow() {
 		s.beg = 6;
-		String str = s.justifyLastRow(words, maxWidth);
+		String str = s.justifyLastRow(words);
 		System.out.println(str);
 	}
 
